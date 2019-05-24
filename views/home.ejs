@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta http-equiv="X-UA-Compatible" content="ie=edge">
+ 
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+ <title>School</title>
+</head>
+<body class="container">
+ <% let capTitle = title.charAt(0).toUpperCase() + title.slice(1) %>
+ <% let capCommand = command.charAt(0).toUpperCase() + command.slice(1) %>
+ <h1 class="text-center"><%= capCommand %> <%= capTitle %> Data</h1>
+
+ <header class="container">
+   <h1 class="text-center"><%= capTitle %> Data</h1>
+   <h4 class="text-center"><a href="/add">add <%= capTitle %></a></h4>
+ </header>
+ <% if(errData) {%>
+  <h2 style="color:red"><%=errData%></h2>
+<% } %>
+ <div class="container">
+     <form action="/login" method="POST">
+         <% header.forEach((firstHeader, index) => {%>
+            <% let type = (firstHeader == 'Email') ? 'email' : 'text' %>
+            <% let lastHeader = firstHeader.split(' ').join('_') 
+            console.log(lastHeader)%>
+        <div class="form-group">
+             <label for="<%= lastHeader %>"><%= firstHeader %> : </label>
+             <% let value = (data) ? data[index] : '' %>
+             <input class="form-control" id="<%= lastHeader %>" type="<%= type %>" name="<%= lastHeader %>" value='<%= value %>' placeholder='<%= value %>' required>
+        </div>
+        <% }) %>
+        <input  class='btn btn-outline-primary' type='submit' value='<%= capCommand %> <%= capTitle %>'>
+</form>
+ </div>
+</body>
+</html>

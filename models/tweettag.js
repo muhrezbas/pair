@@ -2,7 +2,8 @@
 module.exports = (sequelize, DataTypes) => {
   const TweetTag = sequelize.define('TweetTag', {
     TagId: DataTypes.INTEGER,
-    PostId: DataTypes.INTEGER
+    PostId: DataTypes.INTEGER,
+    TweetId:DataTypes.INTEGER
   }, {});
   TweetTag.associate = function(models) {
     // associations can be defined here

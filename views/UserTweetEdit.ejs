@@ -10,9 +10,9 @@
 </head>
 <body class="container">
         <%- include('./partials/navbar.ejs') %>
-    <form action="/tweet/<%= userId %>" method="POST" id="usrform">
+    <form action="/user/edit/<%= dataTweet.id %>" method="POST" id="usrform">
           Tweet:<br>
-          <textarea rows="4" cols="50" name="Tweets" form="usrform">...</textarea>
+          <textarea rows="4" cols="50" name="Tweets" form="usrform"><%= dataTweet.Post %></textarea>
           <br><br>
           <input type="submit" value="Tweets">
     </form> 

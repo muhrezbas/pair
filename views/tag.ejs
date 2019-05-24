@@ -10,11 +10,9 @@
 </head>
 <body class="container">
         <%- include('./partials/navbar.ejs') %>
-    <form action="/tweet/<%= userId %>" method="POST" id="usrform">
-          Tweet:<br>
-          <textarea rows="4" cols="50" name="Tweets" form="usrform">...</textarea>
-          <br><br>
-          <input type="submit" value="Tweets">
-    </form> 
+    <h1>AVALAIBLE TAG</h1>
+    <% data.forEach(el=>{ %>
+        <a href="/tag/<%= userId %>/<%= el.id %>"> <h2><%= el.name %> </h2></a>
+    <%}) %>
 </body>
 </html>

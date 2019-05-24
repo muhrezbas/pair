@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
     <style>
     .sched {
-      background-color: greenyellow;
+      background-color: turquoise;
       color: black;
       margin: 20px;
       padding: 20px;
@@ -22,13 +24,22 @@
     
     </style>
 </head>
-<body>
+
+<body class="container">
+    <%- include('./partials/navbar.ejs') %>
+    <% if(errData) {%>
+      <h2 style="color:red"><%=errData%></h2>
+    <% } %>
+
+    <h2 class="text-center"><a  href="/tweet/<%=userId%>">TWEET</a></h2> 
         <% dataTweet.forEach(el => { %>
             <div class="sched">
                     <h2><%= el.User.UserName %></h2>
                     <h3><%= el.Post %></h3>
                     <p><%= el.createdAt %></p>
-                    <p><a href="/user/<%= el.id %>">delete</a></p>                  
+                    <p><a href="/user/<%=userId%>/delete/<%= el.id %>/<%= el.User.id %>">delete</a></p>    
+                    <p><a href="/user/<%=userId%>/edit/<%= el.id %>/<%= el.User.id %>">edit</a></p>                 
+
             </div>
          <% }) %>
         </body>

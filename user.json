@@ -1,0 +1,17 @@
+[
+    {
+      "name": "Resto Super",
+      "description": "Semua makanan disini super",
+      "location": "Pondok Indah"
+    },
+    {
+      "name": "RM Mewah",
+      "description": "Masakan padang paling mewah di Jakarta",
+      "location": "Gandaria City"
+    },
+    {
+      "name": "Warung Lezatos",
+      "description": "Sedap Mantap Gurih",
+      "location": "Kebayoran Lama"
+    }
+  ]

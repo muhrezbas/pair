@@ -7,14 +7,33 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <title>Document</title>
+
+    <style>
+    .sched {
+      background-color: turquoise;
+      color: black;
+      margin: 20px;
+      padding: 20px;
+    } 
+    .sched2 {
+      background-color: white;
+      color: black;
+      margin: 20px;
+      padding: 20px;
+    }
+    
+    </style>
 </head>
 <body class="container">
         <%- include('./partials/navbar.ejs') %>
-    <form action="/tweet/<%= userId %>" method="POST" id="usrform">
-          Tweet:<br>
-          <textarea rows="4" cols="50" name="Tweets" form="usrform">...</textarea>
-          <br><br>
-          <input type="submit" value="Tweets">
-    </form> 
-</body>
+        <% data.TweetTags.forEach(el => { %>
+            <div class="sched">
+                    <h2><%= el.Tweet.User.UserName %></h2>
+                    <h3><%= el.Tweet.Post %></h3>
+                    <p><%= el.Tweet.createdAt %></p>
+
+            </div>
+         <% }) %>
+        </body>
+        
 </html>

@@ -4,7 +4,9 @@
   "description": "Pair Project Twister",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+
   },
   "repository": {
     "type": "git",
@@ -18,8 +20,12 @@
   },
   "homepage": "https://github.com/IrsantyoHadi/pair-projectTwister#readme",
   "dependencies": {
+    "bcrypt": "^3.0.6",
+    "bcryptjs": "^2.4.3",
     "ejs": "^2.6.1",
     "express": "^4.17.0",
+    "express-session": "^1.16.1",
+    "i": "^0.3.6",
     "pg": "^7.11.0",
     "sequelize": "^5.8.6"
   }
