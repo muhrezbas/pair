@@ -1,0 +1,26 @@
+{
+  "name": "pair-projectTwister",
+  "version": "1.0.0",
+  "description": "Pair Project Twister",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IrsantyoHadi/pair-projectTwister.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IrsantyoHadi/pair-projectTwister/issues"
+  },
+  "homepage": "https://github.com/IrsantyoHadi/pair-projectTwister#readme",
+  "dependencies": {
+    "ejs": "^2.6.1",
+    "express": "^4.17.0",
+    "pg": "^7.11.0",
+    "sequelize": "^5.8.6"
+  }
+}
