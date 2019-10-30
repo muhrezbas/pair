@@ -27,6 +27,6 @@
     "express-session": "^1.16.1",
     "i": "^0.3.6",
     "pg": "^7.11.0",
-    "sequelize": "^5.8.6"
+    "sequelize": "^5.15.1"
   }
 }
